@@ -19,8 +19,10 @@ log_file = open("um-server-01.txt")
 # sales_reports(log_file)
 
 def melon_orders (log_file):
-        for order in log_file:
-                amount = order[0:2]
-                if(amount > 10):
-                        print(amount)
+   for order in log_file:
+        order = order.rstrip().split(' ')
+        count = int(order[2])
+        if count > 10:
+                        print(count)
+
 melon_orders(log_file)
